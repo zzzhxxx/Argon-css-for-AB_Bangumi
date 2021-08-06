@@ -1,0 +1,475 @@
+.ab_bangumi_loading {
+  padding: 100px 0;
+}
+
+.ab_bangumi_loading_text {
+  text-align: center;
+  padding: 10px 0;
+  color:var(--zm_bangumi_color);
+}
+
+.ab_bangumi_loading .loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: background-color .2s ease-out;
+}
+
+.ab_bangumi_loading .loading-anim {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  perspective: 800px;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px) rotateY(-90deg) rotateX(90deg) rotateZ(90deg) scale(0.5);
+  opacity: 0;
+  transition: all .2s ease-out;
+}
+
+.ab_bangumi_loading .loading-anim .circle {
+  width: 100%;
+  height: 100%;
+  animation: spin 5s linear infinite;
+}
+
+.ab_bangumi_loading .loading-anim .border {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.ab_bangumi_loading .loading-anim .out {
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: spin 2s linear reverse infinite;
+}
+
+.ab_bangumi_loading .loading-anim .in {
+  top: 18%;
+  left: 18%;
+  width: 64%;
+  height: 64%;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  animation: spin 2s linear infinite;
+}
+
+.ab_bangumi_loading .loading-anim .mid {
+  top: 40%;
+  left: 40%;
+  width: 20%;
+  height: 20%;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+.ab_bangumi_loading .loading-anim {
+  transform: translateZ(0) rotateY(0deg) rotateX(0deg) rotateZ(0deg) scale(1);
+  opacity: 1;
+}
+
+.ab_bangumi_loading .loading-overlay {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.ab_bangumi_loading .dot {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color:var(--zm_bangumi_color);
+  animation: jitter 5s ease-in-out infinite, fade-in-out 5s linear infinite;
+}
+
+.ab_bangumi_loading .dot:nth-child(1) {
+  top: 90px;
+  left: 180px;
+  animation-delay: 0s;
+}
+
+.ab_bangumi_loading .dot:nth-child(2) {
+  top: 135px;
+  left: 168px;
+  animation-delay: 0.41667s;
+}
+
+.ab_bangumi_loading .dot:nth-child(3) {
+  top: 168px;
+  left: 135px;
+  animation-delay: 0.83333s;
+}
+
+.ab_bangumi_loading .dot:nth-child(4) {
+  top: 180px;
+  left: 90px;
+  animation-delay: 1.25s;
+}
+
+.ab_bangumi_loading .dot:nth-child(5) {
+  top: 168px;
+  left: 45px;
+  animation-delay: 1.66667s;
+}
+
+.ab_bangumi_loading .dot:nth-child(6) {
+  top: 135px;
+  left: 12px;
+  animation-delay: 2.08333s;
+}
+
+.ab_bangumi_loading .dot:nth-child(7) {
+  top: 90px;
+  left: 0px;
+  animation-delay: 2.5s;
+}
+
+.ab_bangumi_loading .dot:nth-child(8) {
+  top: 45px;
+  left: 12px;
+  animation-delay: 2.91667s;
+}
+
+.ab_bangumi_loading .dot:nth-child(9) {
+  top: 12px;
+  left: 45px;
+  animation-delay: 3.33333s;
+}
+
+.ab_bangumi_loading .dot:nth-child(10) {
+  top: 0px;
+  left: 90px;
+  animation-delay: 3.75s;
+}
+
+.ab_bangumi_loading .dot:nth-child(11) {
+  top: 12px;
+  left: 135px;
+  animation-delay: 4.16667s;
+}
+
+.ab_bangumi_loading .dot:nth-child(12) {
+  top: 45px;
+  left: 168px;
+  animation-delay: 4.58333s;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jitter {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  25% {
+    transform: scale(0.7, 0.7);
+  }
+
+  50% {
+    transform: scale(1, 1);
+  }
+
+  75% {
+    transform: scale(1.3, 1.3);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0.8;
+  }
+
+  25% {
+    opacity: 0.2;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+
+
+/* 导航样式 */
+#ab_bangumi_nav{
+  margin:10px auto 0px auto;
+  width: 100%;
+  text-align: center;
+}
+#zm_ab_bangumi_nav{
+  
+}
+#zm_ab_bangumi_nav li {
+  display: inline-block;
+color: #666;
+  padding: 10px;
+  border-radius: 3px;
+  border:1px solid rgb(51, 143, 255);
+text-decoration: none;
+margin: 0 1px;
+  min-width: 10px;
+  /*transition: background .2s linear;*/
+  transition-duration: 0.4s;
+  font-size: 12px;
+  line-height: 12px;
+  -o-user-select: none; 
+  -moz-user-select: none; 
+  /*firefox*/
+  -webkit-user-select: none; 
+  /*webkit浏*/
+  -ms-user-select: none; 
+  /*IE10+*/
+  -khtml-user-select :none;
+   /*早期的浏览器*/
+  user-select: none; 
+
+}
+
+#zm_ab_bangumi_nav li.current{
+background: var(--zm_bangumi_color);
+color: white;
+
+}
+
+#zm_ab_bangumi_nav li:hover:not(.none){
+  background: var(--zm_bangumi_color);
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+  color: white;
+
+}
+#zm_ab_bangumi_nav li.none{
+  border:none;
+}
+/* 番剧样式 */
+#ab_bangumi_content{
+  width: 100%;
+  height: 80%;
+  display:grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, 240px);
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  transition-duration: 0.4s;
+  
+}
+
+.bangumi_content_loading{
+grid-template-columns: auto !important;
+transition-duration: 0.4s;
+}
+
+#ab_bangumi_content::after {
+content: "";
+transition-duration: 0.4s;
+flex: auto;
+}
+.ab_bangumiItem{
+  position: relative;
+  width: 100%;
+  max-width: 240px;
+  height: 320px;
+  overflow: hidden;
+  margin: 0px;
+  background-color: aliceblue;
+  transition-duration: 0.4s;
+  /*font-family: 'Noto Serif SC','Source Han Serif SC','Source Han Serif','source-han-serif-sc','PT Serif','SongTi SC','MicroSoft Yahei',Georgia,serif;*/
+  border-radius: 6px;
+  transition-duration: 0.4s;
+}
+.ab_bangumiItem:hover{
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+}
+.ab_bangumiCover{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-attachment: local;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition-duration: 0.4s;
+  background-color:var(--zm_bangumi_color);
+
+}
+
+.ab_bangumiCoverImg{
+padding: 0 !important;
+margin: 0 !important;
+width: 100% !important;
+height: 100% !important;
+object-fit: cover !important;
+border: none !important;
+max-width: 100% !important;
+max-height: 100%;
+border-radius: 0 !important;
+}
+.ab_bangumiProgress{
+  position: absolute;
+  height: 15px;
+  width: 100%;
+  bottom: 0;
+  border-radius: 0 0 2px 2px;
+  background-color: rgba(60, 60, 60, 0.23);
+  transition-duration: 0.4s;
+}
+.ab_bangumiProgress .ab_realPr{
+  position: absolute;
+  top:0;
+  height: 100%;
+  width: 45%;
+  background-color: var(--zm_bangumi_color);
+  border-radius: 0 0 2px 2px;
+}
+.ab_textContainer{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  white-space: nowrap;
+  line-height: 10px;
+  transition-duration: 0.4s;
+}
+.ab_textContainer>.ab_ProgressText{
+  white-space: nowrap;
+  height: 100%;
+  text-align: left;
+  font-size: 12px;
+  line-height: 15px;
+  color: white;
+  display: inline-block;
+   animation:marquee 8s linear 0s infinite normal;
+   vertical-align: top;
+   transition-duration: 0.4s;
+  /* display: inline-block; */
+}
+@keyframes marquee{
+  /* from {
+      transform:translate(0,0);
+     }
+     to {
+      transform:translate(-100%,0);
+     } */
+     0%{
+      transform:translate(0,0);
+     }
+     15%{
+      transform:translate(0,0);
+     }
+     100%{
+      transform:translate(-25%,0);
+
+     }
+  
+}
+.ab_bangumiDestription{
+  position: absolute;
+  left: 0;
+  top:50%;
+  width: 100%;
+  display: flex;
+  transform: translateY(50%);
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-weight: bold;
+  color: #353535;
+  visibility: hidden;
+  opacity:0;
+  transition:all 0.8s ease;
+}
+.ab_bangumiItem:hover .ab_bangumiDestription{
+  top: 0;
+  transform: translateY(0);
+  visibility: visible;
+  opacity:1;
+  
+}
+
+.ab_desTitle{
+  box-sizing: border-box;
+  padding: 0 20px;
+  display: block;
+  max-width: 100%;
+  max-height: 10%;
+  font-size:18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  transition-duration: 0.4s;
+}
+.ab_desText{
+  box-sizing: border-box;
+  padding: 0 20px;
+  display:block;
+  width: 100%;
+  max-height: 66%;
+  overflow-y: auto;
+  cursor: unset;
+  font-size:16px;
+  font-weight: 400;
+  line-height: 120%;
+  text-align: justify;
+  user-select: none;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  white-space: pre-line;
+  transition-duration: 0.4s;
+}
+
+.ab_bangumiGo{
+  width: 60%;
+  cursor: pointer;
+
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: var(--zm_bangumi_color);
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5px;
+  border:none;
+  text-align: center;
+  justify-content: center;
+  user-select: none;
+  transition-duration: 0.4s !important;
+}
+.ab_bangumiGo:hover{
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 8px 25px 0 rgba(0,0,0,0.19);
+
+}
+/* @media only screen and (max-width: 390px){
+  .bangumiItem{
+      background-size: auto 100%;
+  }
+} */
